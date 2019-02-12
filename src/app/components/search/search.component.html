@@ -1,3 +1,26 @@
-<p>
-  search works!
-</p>
+<div class="row">
+  <div class="col">
+    <input
+      #termino
+      type="text"
+      (keyup)="buscar(termino.value)"
+      class="form-control"
+      placeholder="Buscar artista"
+    />
+  </div>
+</div>
+
+<app-loading class="m-5" *ngIf="loading"></app-loading>
+
+<app-cards [items]="artistas" *ngIf="!loading"></app-cards>
+
+<!-- <div class="card-columns m-5">
+  <div class="card" *ngFor="let artista of artistas">
+    <img [src]="artista.images | noimage" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">
+        {{ artista.name | uppercase }}
+      </h5>
+    </div>
+  </div>
+</div> -->
