@@ -9,7 +9,7 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 })
 export class ArtistComponent implements OnInit {
   artist: any = {};
-  TopTracks: any = {};
+  TopTracks: any = [];
   loading = false;
   constructor(private router: ActivatedRoute, private spotify: SpotifyService) {
     this.loading = true;
